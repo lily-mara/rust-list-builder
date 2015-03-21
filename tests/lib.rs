@@ -1,3 +1,7 @@
+#[macro_use]
+#[no_link]
+extern crate list_builder;
+
 use std::collections::HashSet;
 
 #[test]
