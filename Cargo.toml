@@ -6,6 +6,7 @@ authors = ["Nate Mara <natemara@gmail.com>"]
 description = "Python-like list comprehensions in Rust"
 homepage = "https://github.com/natemara/rust-list-builder"
 repository = "https://github.com/natemara/rust-list-builder"
+documentation = "http://natemara.github.io/rust-list-builder/list_builder/"
 
 readme = "README.md"
 keywords = ["macro", "syntax-extension"]
