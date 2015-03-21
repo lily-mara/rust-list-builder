@@ -77,3 +77,19 @@ fn test_function_call() {
 
     assert_eq!(actual, expected);
 }
+
+#[test]
+fn test_conditional_vec() {
+    let actual: Vec<i32> = gen![x => x in [1, 2, 3, 4], x % 2 == 0];
+    let expected = vec![2, 4];
+
+    assert_eq!(actual, expected);
+}
+
+#[test]
+fn test_conditional_double_vec() {
+    let actual: Vec<i32> = gen![x*2 => x in [1, 2, 3, 4], x % 2 == 0];
+    let expected = vec![4, 8];
+
+    assert_eq!(actual, expected);
+}

@@ -8,7 +8,10 @@
 macro_rules! gen {
     [$e:expr => $variable:ident in $iterable:expr] => (
         $iterable.iter().cloned().map(|$variable| $e).collect()
-    )
+    );
+    [$e:expr => $variable:ident in $iterable:expr, $condition:expr] => (
+        $iterable.iter().cloned().filter(|$variable| $condition).map(|$variable| $e).collect()
+    );
 }
 
 #[cfg(test)]
