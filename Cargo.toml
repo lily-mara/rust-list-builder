@@ -1,7 +1,7 @@
 [package]
 
 name = "list_builder"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Nate Mara <natemara@gmail.com>"]
 description = "Python-like list comprehensions in Rust"
 homepage = "https://github.com/natemara/rust-list-builder"
