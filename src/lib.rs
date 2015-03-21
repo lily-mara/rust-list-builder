@@ -5,21 +5,21 @@
 /// iterable that implements `std::iter::FromIterator`. The resulting type will be determined by
 /// the type of the variable that you are attempting to assign to. You can create a `Vec`:
 ///
-/// ```
+/// ```ignore
 /// let x: Vec<i32> = gen![i*30 => i in [1, 2, 3, 4, 5]];
 /// ```
 ///
 /// You can generate a `HashSet`:
 ///
-/// ```
+/// ```ignore
 /// let x: HashSet<i32> = gen![i*30 => i in [1, 2, 3, 4, 5]];
 /// ```
 ///
 /// You can even use conditionals to generate stuff:
 ///
-/// ```
+/// ```ignore
 /// let x: HashSet<i32> = gen![i => i in [1, 2, 3, 4, 5], x % 2 == 0];
-/// // outputs vec![2, 4]
+/// assert_eq!(x, vec![2, 4]);
 /// ```
 ///
 /// Comparisson to Python's list comprehension
@@ -33,10 +33,11 @@
 ///
 /// Rust with gen! macro
 /// ---
-/// ```
+/// ```ignore
 /// let x: Vec<i32> = gen!(x*4 => x in [1, 2, 3, 4]);
 /// ```
 #[macro_export]
+#[macro_use]
 macro_rules! gen {
     [$e:expr => $variable:ident in $iterable:expr] => (
         $iterable.iter().cloned().map(|$variable| $e).collect()
@@ -45,6 +46,3 @@ macro_rules! gen {
         $iterable.iter().cloned().filter(|$variable| $condition).map(|$variable| $e).collect()
     );
 }
-
-#[cfg(test)]
-mod test;
