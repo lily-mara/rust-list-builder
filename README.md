@@ -21,6 +21,6 @@ fn main() {
 You can use conditionals just like in Python:
 
 ```rust
-let x: Vec<i32> = gen![i*1000 => i in [1, 2, 3, 4, 5, 6], x % 2 == 0];
+let x: Vec<i32> = gen![i*1000 => i in [1, 2, 3, 4, 5, 6], i % 2 == 0];
 assert_eq!(x, vec![2000, 4000, 6000]);
 ```
